@@ -139,15 +139,22 @@ ul.menu li a:hover {
 
 }
 
-
 .itemcontent {
   background-color: beige;
   width: 100%;
   position: fixed;
   left: 0;
+  display: none;
 }
 
 
 
 
-.contentmenu {}
+.contentmenu {
+  background-color: black;
+}
+
+.contentmenu>ul {
+  display: flex;
+  padding: 20px;
+}
