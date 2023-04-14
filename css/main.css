@@ -476,4 +476,29 @@ header .badges .badge {
 
   /* 방법2. flex를 사용하여 비율 나누기 */
   /* flex: 3; */
+
+  display: flex;
+
+  /* 오른쪽으로 */
+  justify-content: flex-end;
+
+  align-items: center;
+}
+
+.notice .inner__right h2 {
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.notice .inner__right .toggle-promotion {
+  width: 62px;
+  height: 62px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.notice .inner__right .toggle-promotion .material-icons {
+  font-size: 30px;
 }
