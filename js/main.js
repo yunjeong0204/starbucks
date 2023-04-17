@@ -89,8 +89,8 @@ new Swiper('.promotion .swiper', {
   },
 
   navigation: { //슬라이드 이전,다음 버튼 사용
-    nextEl: '.promotion .swiper-button-next',
     prevEl: '.promotion .swiper-button-prev',
+    nextEl: '.promotion .swiper-button-next',
   },
 });
 
