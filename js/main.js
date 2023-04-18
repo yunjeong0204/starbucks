@@ -114,6 +114,48 @@ promotionToggleBtn.addEventListener('click', function () {
   }
 });
 
+// 유튜브 섹션 위에 부유 요소 애니메이션 처리
+// gsap.to(요소, 지속시간, 옵션: {})
+// 옵션 참고: https://greensock.com/docs/v3/GSAP/gsap.to()
+
+gsap.to('.floating1', 1.5, {
+  delay: 1, //얼마나 늦게 애니메이션을 시작할 것인지 지연 시간을 설정
+  y: 15, //transform: translateY();와 같음, 수직으로 얼마나 움직일지 설정
+  repeat: -1, //몇 번 반복하는지를 설정, -1은 무한반복
+  yoyo: true, //한 번 재생된 애니메이션을 다시 뒤로 재생
+  ease: Power1.easeInOut//Easing 함수 적용, 느리게-빠르게-느리게
+});
+
+gsap.to('.floating2', 2.5, {
+  delay: 2, //얼마나 늦게 애니메이션을 시작할 것인지 지연 시간을 설정
+  y: 13, //transform: translateY();와 같음, 수직으로 얼마나 움직일지 설정
+  repeat: -1, //몇 번 반복하는지를 설정, -1은 무한반복
+  yoyo: true, //한 번 재생된 애니메이션을 다시 뒤로 재생
+  ease: Power1.easeInOut//Easing 함수 적용, 느리게-빠르게-느리게
+});
+
+gsap.to('.floating3', 2, {
+  delay: 0.5, //얼마나 늦게 애니메이션을 시작할 것인지 지연 시간을 설정
+  y: 10, //transform: translateY();와 같음, 수직으로 얼마나 움직일지 설정
+  repeat: -1, //몇 번 반복하는지를 설정, -1은 무한반복
+  yoyo: true, //한 번 재생된 애니메이션을 다시 뒤로 재생
+  ease: Power1.easeInOut//Easing 함수 적용, 느리게-빠르게-느리게
+});
+
+// awards 섹션 슬라이드 기능
+new Swiper('.awards .swiper', {
+  direction: 'horizontal', //수평 슬라이드(기본값)
+  loop: true, //반복 재생 여부
+  autoplay: true, //true: 기본값 3초
+  slidesPerView: 5, //한 번에 보여줄 슬라이드 개수(기본값: 1)
+  spaceBetween: 30, //슬라이드 사이 여백(간격) px
+  navigation: { //슬라이드 이전,다음 버튼 사용
+    prevEl: '.awards .swiper-button-prev',
+    nextEl: '.awards .swiper-button-next',
+  },
+});
+
+
 
 
 
