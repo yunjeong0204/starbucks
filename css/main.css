@@ -1,3 +1,8 @@
+/* 스크롤 이동을 부드럽게 */
+html {
+  scroll-behavior: smooth;
+}
+
 /* COMMON */
 body {
   font-family: 'Nanum Gothic', sans-serif;
@@ -96,6 +101,42 @@ img {
   color: #333;
   background-color: #fff;
 }
+
+/* BACK TO POSITIONS */
+.back-to-position {
+  opacity: 0;
+  transition: 1s;
+}
+
+.back-to-position.to-left {
+  /* 오른쪽에서 왼쪽으로 나타나는 */
+  transform: translateX(150px);
+}
+
+.back-to-position.to-right {
+  /* 왼쪽에서 오른쪽으로 나타나는 */
+  transform: translateX(-150px);
+}
+
+.show .back-to-position {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.show .back-to-position.delay-1 {
+  transition-delay: .3s;
+}
+
+.show .back-to-position.delay-2 {
+  transition-delay: .6s;
+}
+
+.show .back-to-position.delay-3 {
+  transition-delay: .9s;
+}
+
+
+
 
 /* header */
 header {
@@ -988,4 +1029,119 @@ header .badges .badge {
 .awards .swiper-button-prev::after,
 .awards .swiper-button-next::after {
   display: none;
+}
+
+/* footer */
+footer {
+  background-color: #272727;
+  border-top: 1px solid #333;
+}
+
+footer .inner {
+  padding: 40px 0 60px 0;
+}
+
+footer .menu {
+  display: flex;
+  justify-content: center;
+}
+
+footer .menu li {
+  position: relative;
+}
+
+/* 메뉴 아이템 사이 구분선 만들기 */
+footer .menu li::before {
+  /* 필수 속성 content */
+  content: "";
+
+  display: block;
+  width: 3px;
+  height: 3px;
+  background-color: #555;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: -1px;
+
+  /* 수직 가운데 배치 */
+  margin: auto;
+}
+
+footer .menu li:first-child::before {
+  display: none;
+}
+
+footer .menu li a {
+  color: #ccc;
+  font-size: 12px;
+  font-weight: 700;
+
+  /* 위-아래 여백 적용을 위해 */
+  display: block;
+
+  /* 클릭할 수 있는 범위를 늘려주기 위함 */
+  padding: 15px;
+}
+
+footer .menu li a.green {
+  color: #669900;
+}
+
+footer .btn-group {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+footer .btn-group .btn {
+  font-size: 12px;
+}
+
+footer .btn-group .btn+.btn {
+  margin-left: 10px;
+}
+
+footer .info {
+  margin-top: 30px;
+  text-align: center;
+}
+
+footer .info span {
+  color: #999;
+  font-size: 12px;
+}
+
+footer .info span+span {
+  margin-left: 20px;
+}
+
+footer .copyright {
+  color: #999;
+  font-size: 12px;
+  text-align: center;
+  margin-top: 12px;
+}
+
+footer .logo {
+  /* img 요소가 display: block; + margin: 0 auto;인 경우, width 속성이 없이도 가운에 정렬이 가능함 */
+  margin: 30px auto 0;
+}
+
+/* SCROLL TO TOP */
+#to-top {
+  width: 42px;
+  height: 42px;
+  background-color: #333;
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 9;
 }
